@@ -1,0 +1,17 @@
+name: Label New Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Add "To Do" label to new issues
+      uses: andymckay/labeler@v1
+      with:
+        add-labels: "To Do"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
