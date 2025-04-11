@@ -5,13 +5,12 @@ on:
     types: [opened]
 
 jobs:
-  label:
+  add-label:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Add "To Do" label to new issues
-      uses: andymckay/labeler@v1
+    - name: Add "To Do" label to new issue
+      uses: actions-ecosystem/action-add-labels@v1
       with:
-        add-labels: "To Do"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        labels: "To Do"
